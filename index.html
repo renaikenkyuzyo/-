@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>外部ブラウザで開く案内</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe4f0, #fff0f5);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff1493;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  a.button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: #ff69b4;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+  }
+
+  a.button:hover {
+    background: #ff85c1;
+    transform: scale(1.05);
+  }
+
+  .note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 25px;
+  }
+</style>
+</head>
+<body>
+  <h1>⚠ このページはアプリ内ブラウザでは正しく表示されないことがあります</h1>
+  <p>下のボタンをタップして、SafariやChromeなどの外部ブラウザで開いてください</p>
+  <a class="button" href="https://renaikenkyuzyo.github.io/renaikenkyuzyonoapp/" target="_blank" rel="noopener noreferrer">
+    外部ブラウザで開く
+  </a>
+  <div class="note">※ LINEやInstagram内ブラウザからも開けますが、表示が崩れる場合があります</div>
+</body>
+</html>
