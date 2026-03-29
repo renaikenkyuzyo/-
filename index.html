@@ -4,84 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>外部ブラウザで開いてね💖</title>
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
 
-  body {
-    font-family: 'Baloo 2', cursive;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
-    text-align: center;
-    color: #333;
-  }
+body {
+  font-family: 'Baloo 2', cursive;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+  text-align: center;
+  color: #333;
+}
 
-  .container {
-    background: #fff0f5;
-    padding: 30px 25px;
-    border-radius: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    max-width: 320px;
-    width: 90%;
-  }
+.container {
+  background: #fff0f5;
+  padding: 32px 26px;
+  border-radius: 26px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 340px;
+  width: 90%;
+}
 
-  h2 {
-    color: #ff69b4;
-    margin-bottom: 15px;
-    font-size: 1.6em;
-  }
+h2 {
+  color: #ff69b4;
+  margin-bottom: 16px;
+  font-size: 1.6em;
+}
 
-  p {
-    font-size: 1em;
-    margin-bottom: 20px;
-  }
+p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
 
-  input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 15px;
-    border: 1px solid #ffb6c1;
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid #ffb6c1;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
 
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #ff69b4;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+button {
+  width: 100%;
+  padding: 13px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+}
 
-  button:hover {
-    background: #ff85c1;
-  }
-
+button:hover {
+  background: #ff85c1;
+}
 </style>
 </head>
+
 <body>
 <div class="container">
-  <h2>💌 外部ブラウザで開いてね！</h2>
-  <p>下のURLをコピーして、SafariやChromeに貼り付けて開こう💖</p>
-  <input type="text" id="urlField" value="https://renaikenkyuzyo.github.io/rena ikenkyuzyonoapp/"#readonly>
-  <button onclick="copyURL()">コピーする</button>
+  <h2>💌 外部ブラウザで開いてね</h2>
+  <p>
+    LINEなどのアプリ内では開けません。<br>
+    下のURLをコピーして<br>
+    <b>Safari / Chrome</b> に貼り付けてね💖
+  </p>
+
+  <input
+    type="text"
+    id="urlField"
+    value="https://renaikenkyuzyo.github.io/renaikenkyuzyonoapp/"
+    readonly
+  >
+
+  <button onclick="copyURL()">URLをコピーする</button>
 </div>
 
 <script>
 function copyURL() {
   const urlField = document.getElementById('urlField');
   urlField.select();
-  urlField.setSelectionRange(0, 99999); // モバイル対応
+  urlField.setSelectionRange(0, 99999); // スマホ対応
+
   navigator.clipboard.writeText(urlField.value).then(() => {
-    alert('💖 URLをコピーしました！SafariやChromeに貼り付けて開いてね 💖');
+    alert('💖 コピー完了！SafariやChromeに貼り付けて開いてね 💖');
   });
 }
 </script>
