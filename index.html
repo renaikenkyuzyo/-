@@ -2,66 +2,88 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>外部ブラウザで開く案内</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外部ブラウザで開いてね💖</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
   body {
+    font-family: 'Baloo 2', cursive;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ffe4f0, #fff0f5);
-    color: #333;
+    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
     text-align: center;
-    padding: 20px;
+    color: #333;
   }
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ff1493;
+  .container {
+    background: #fff0f5;
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 320px;
+    width: 90%;
+  }
+
+  h2 {
+    color: #ff69b4;
+    margin-bottom: 15px;
+    font-size: 1.6em;
   }
 
   p {
-    font-size: 16px;
-    margin-bottom: 30px;
-    line-height: 1.5;
+    font-size: 1em;
+    margin-bottom: 20px;
   }
 
-  a.button {
-    display: inline-block;
-    padding: 18px 40px;
+  input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #ffb6c1;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
     background: #ff69b4;
     color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
+    border: none;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
   }
 
-  a.button:hover {
+  button:hover {
     background: #ff85c1;
-    transform: scale(1.05);
   }
 
-  .note {
-    font-size: 14px;
-    color: #666;
-    margin-top: 25px;
-  }
 </style>
 </head>
 <body>
-  <h1>⚠ このページはアプリ内ブラウザでは正しく表示されないことがあります</h1>
-  <p>下のボタンをタップして、SafariやChromeなどの外部ブラウザで開いてください</p>
-  <a class="button" href="https://renaikenkyuzyo.github.io/renaikenkyuzyonoapp/" target="_blank" rel="noopener noreferrer">
-    外部ブラウザで開く
-  </a>
-  <div class="note">※ LINEやInstagram内ブラウザからも開けますが、表示が崩れる場合があります</div>
+<div class="container">
+  <h2>💌 外部ブラウザで開いてね！</h2>
+  <p>下のURLをコピーして、SafariやChromeに貼り付けて開こう💖</p>
+  <input type="text" id="urlField" value="https://example.com" readonly>
+  <button onclick="copyURL()">コピーする</button>
+</div>
+
+<script>
+function copyURL() {
+  const urlField = document.getElementById('urlField');
+  urlField.select();
+  urlField.setSelectionRange(0, 99999); // モバイル対応
+  navigator.clipboard.writeText(urlField.value).then(() => {
+    alert('💖 URLをコピーしました！SafariやChromeに貼り付けて開いてね 💖');
+  });
+}
+</script>
 </body>
 </html>
